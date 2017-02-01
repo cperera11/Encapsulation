@@ -38,7 +38,7 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-        if (lastName == null || lastName.isEmpty()){
+       if (lastName == null || lastName.isEmpty()){
            System.out.println("Please enter the last name again: "); 
         }else{
         this.lastName = lastName;
