@@ -150,6 +150,9 @@ public class Employee {
         this.reviewedDeptPolicies = reviewedDeptPolicies;
     }
 
+    public boolean isMovedIn() {
+        return movedIn;
+    }
     public String getCubeId() {
         return cubeId;
     }
