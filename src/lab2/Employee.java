@@ -35,17 +35,16 @@ public class Employee {
         this.ssn = ssn;
     }
 
-    // Assume this must be performed first, and assume that an employee
-    // would only do this once, upon being hired.
+    // creating a method to get formatted date 
     private String getFormattedDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(orientationDate);
         return fmtDate;
     }
 
+    // Assume this must be performed first, and assume that an employee
+    // would only do this once, upon being hired.
     public void meetWithHrForBenefitAndSalryInfo() {
-        metWithHr = true;
-
         System.out.println(firstName + " " + lastName + " met with Hr on "
                 + getFormattedDate());
     }
@@ -53,8 +52,6 @@ public class Employee {
     // Assume this must be performed second, and assume that an employee
     // would only do this once, upon being hired.:
     public void meetDepartmentStaff() {
-        metDeptStaff = true;
-
         System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
                 + getFormattedDate());
     }
@@ -64,7 +61,6 @@ public class Employee {
     // independently from other classes.
     public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
-
         System.out.println(firstName + " " + lastName + " reviewed Dept policies on "
                 + getFormattedDate());
     }
@@ -78,6 +74,17 @@ public class Employee {
 
         System.out.println(firstName + " " + lastName + " moved into cubicle "
                 + cubeId + " on " + getFormattedDate());
+    }
+// line up the orientation events
+    public void orientation() {
+        if (metWithHr = true) {
+            meetWithHrForBenefitAndSalryInfo();
+        }
+        if (metDeptStaff = true) {
+            meetDepartmentStaff();
+        }
+        reviewDeptPolicies();
+        reviewDeptPolicies();
     }
 
     public String getFirstName() {
@@ -141,14 +148,6 @@ public class Employee {
 
     public void setReviewedDeptPolicies(boolean reviewedDeptPolicies) {
         this.reviewedDeptPolicies = reviewedDeptPolicies;
-    }
-
-    public boolean isMovedIn() {
-        return movedIn;
-    }
-
-    public void setMovedIn(boolean movedIn) {
-        this.movedIn = movedIn;
     }
 
     public String getCubeId() {
