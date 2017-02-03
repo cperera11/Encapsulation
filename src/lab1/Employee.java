@@ -69,15 +69,22 @@ public class Employee {
     }
 
     public void setCubeId(String cubeId) {
+       if (cubeId == null || cubeId.isEmpty()){
+           System.out.println("Please enter the cube Id again: "); 
+        }else{
         this.cubeId = cubeId;
+       }
     }
 
     public void setOrientationDate(Date orientationDate) {
+        if (orientationDate== null){
+           System.out.println("Please enter the orientation Date again: "); 
+        }else{
         this.orientationDate = orientationDate;
+        }
     }
     
-    
-
+   
     public String getFirstName() {
         return firstName;
     }
