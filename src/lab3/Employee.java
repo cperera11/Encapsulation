@@ -46,10 +46,12 @@ public class Employee {
     private boolean movedIn;
     private String cubeId;
     private Date orientationDate;
+    private ReportService reportOutput;
 
     public Employee(String firstName, String lastName, String ssn) {
         // Using setter method guarantees validation will be performed
         // Ignore the warning messages for now. Will be explained later
+        reportOutput = new ReportService();
         setFirstName(firstName);
         setLastName(lastName);
         setSsn(ssn);
@@ -89,7 +91,8 @@ public class Employee {
     // and should only be called as part of the larger task of:
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        System.out.println(firstName + " " + lastName + " met with Hr on "
+        
+        reportOutput.printReport(firstName + " " + lastName + " met with Hr on "
             + getFormattedDate());
     }
 
@@ -100,8 +103,9 @@ public class Employee {
     // doFirtTimeOrientation()
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
-            + getFormattedDate());
+       // reportOutput.printReport(firstName, lastName, orientationDate, ssn);
+       // System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
+          //  + getFormattedDate());
     }
 
     // Assume this must be performed third. And assume that because department
