@@ -30,9 +30,13 @@ public class Employee {
     private Date orientationDate;
 
     public Employee(String firstName, String lastName, String ssn) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.ssn = ssn;
+        //this.firstName = firstName;
+        //this.lastName = lastName;
+        //this.ssn = ssn;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setSsn(ssn);
+
     }
 
     // creating a method to get formatted date 
@@ -44,14 +48,16 @@ public class Employee {
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.
-    public void meetWithHrForBenefitAndSalryInfo() {
+    private void meetWithHrForBenefitAndSalryInfo() {
+        metWithHr = true;
         System.out.println(firstName + " " + lastName + " met with Hr on "
                 + getFormattedDate());
     }
 
     // Assume this must be performed second, and assume that an employee
     // would only do this once, upon being hired.:
-    public void meetDepartmentStaff() {
+    private void meetDepartmentStaff() {
+        metDeptStaff = true;
         System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
                 + getFormattedDate());
     }
@@ -76,15 +82,13 @@ public class Employee {
                 + cubeId + " on " + getFormattedDate());
     }
 // line up the orientation events
-    public void orientation() {
-        if (metWithHr = true) {
-            meetWithHrForBenefitAndSalryInfo();
-        }
-        if (metDeptStaff = true) {
-            meetDepartmentStaff();
-        }
+
+    public void performOrientation(String cubeId) {
+
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
         reviewDeptPolicies();
-        reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
     }
 
     public String getFirstName() {
@@ -150,9 +154,14 @@ public class Employee {
         this.reviewedDeptPolicies = reviewedDeptPolicies;
     }
 
+    public void setMovedIn(boolean movedIn) {
+        this.movedIn = movedIn;
+    }
+
     public boolean isMovedIn() {
         return movedIn;
     }
+
     public String getCubeId() {
         return cubeId;
     }
