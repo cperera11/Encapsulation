@@ -10,15 +10,27 @@ package lab4;
  * @author CPere
  */
 public class Company {
-    private String name;
-    private String address;
+    
+    private final static String name = "IT Net Solutions";
     private HRManager hrManager;
-    private Employee employee;
-    
-    
-    private Company(){
-    employee = new Employee();
+
+    public Company(String empFirstName, String empLastName, String empSsn) {
+        hrManager = new HRManager(empFirstName, empLastName, empSsn);
     }
-    
-    
+
+    public void hireEmployee(String empCubeId) {
+        hrManager.hireEmployee(empCubeId);
+
+    }
+
+    public void fireEmployee() {
+
+    }
+
+    public static String getName() {
+        return name;
+    }
+
 }
+
+    
