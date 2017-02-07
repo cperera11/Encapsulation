@@ -63,6 +63,10 @@ public class Employee {
         setSsn(ssn);
         reportService = new EmployeeReportService();
     }
+
+    Employee() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     /* 
         This should be private because it is useful only to this class and then,
